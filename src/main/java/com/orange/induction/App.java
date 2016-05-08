@@ -85,16 +85,32 @@ public class App {
         if (sb == null) {
             return false;
         }
+        for(int i = 0 ; i < 9 ; i++) {
+            System.out.print("*");
+        }
+        System.out.println("*");
+
         sb = this.compile(sb);
         if (sb == null) {
             return false;
         }
 
+        for(int i = 0 ; i < 9 ; i++) {
+            System.out.print("*");
+        }
+        System.out.println("*");
+
         sb = this.sortAndOrderBy(sb);
         if (sb == null) {
             return false;
         }
+        for(int i = 0 ; i < 9 ; i++) {
+            System.out.print("*");
+        }
+        System.out.println("*");
+
         System.out.println(sb);
+
         return true;
 
     }
@@ -123,10 +139,16 @@ public class App {
  * Are the comments necessary? Do they explain "why" and not "what"?
  * Can you refactor the code so the comments aren't required?
  * And remember, you're writing comments for people, not machines.
- * <p>
+ *
+ *
  * [2 Long Method] 	All other things being equal,
  * a shorter method is easier to read,
  * easier to understand,
  * and easier to troubleshoot.
  * Refactor long methods into smaller methods if you can.
+ *
+ * [3 Long Parameter List] The more parameters a method has,
+ * the more complex it is.
+ * Limit the number of parameters you need in a given method,
+ * or use an object to combine the parameters.
  */

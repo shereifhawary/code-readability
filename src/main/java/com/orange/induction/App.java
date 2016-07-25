@@ -33,6 +33,7 @@ public class App {
 
     /**
      * [1 comments] Print welcome message to the user
+     * this function don't check on nulls, better check out side of the function as it's a void function
      *
      * @param message
      */
@@ -85,34 +86,32 @@ public class App {
         if (sb == null) {
             return false;
         }
-        for(int i = 0 ; i < 9 ; i++) {
-            System.out.print("*");
-        }
-        System.out.println("*");
+        printStarts();
 
         sb = this.compile(sb);
         if (sb == null) {
             return false;
         }
 
-        for(int i = 0 ; i < 9 ; i++) {
-            System.out.print("*");
-        }
-        System.out.println("*");
+        printStarts();
 
         sb = this.sortAndOrderBy(sb);
         if (sb == null) {
             return false;
         }
-        for(int i = 0 ; i < 9 ; i++) {
-            System.out.print("*");
-        }
-        System.out.println("*");
+        printStarts();
 
         System.out.println(sb);
 
         return true;
 
+    }
+
+    private void printStarts() {
+        for(int i = 0 ; i < 9 ; i++) {
+            System.out.print("*");
+        }
+        System.out.println("*");
     }
 
     private StringBuilder sortAndOrderBy(StringBuilder sb1) {
@@ -135,20 +134,60 @@ public class App {
 }
 
 /**
- * [1 Comments]	There's a fine line between comments that illuminate and comments that obscure.
+ * [1 Comments]
+ * There's a fine line between comments that illuminate and comments that obscure.
  * Are the comments necessary? Do they explain "why" and not "what"?
  * Can you refactor the code so the comments aren't required?
  * And remember, you're writing comments for people, not machines.
  *
  *
- * [2 Long Method] 	All other things being equal,
+ * [2 Long Method]
+ * All other things being equal,
  * a shorter method is easier to read,
  * easier to understand,
  * and easier to troubleshoot.
  * Refactor long methods into smaller methods if you can.
  *
- * [3 Long Parameter List] The more parameters a method has,
+ * [3 Long Parameter List]
+ * The more parameters a method has,
  * the more complex it is.
  * Limit the number of parameters you need in a given method,
  * or use an object to combine the parameters.
+ *
+ * [4 Duplicated code]
+ * Duplicated code is the bane of software development.
+ * Stamp out duplication whenever possible.
+ * You should always be on the lookout for more subtle cases of near-duplication, too.
+ * Don't Repeat Yourself!
+ *
+ * [5 Conditional Complexity]
+ * Watch out for large conditional logic blocks,
+ * particularly blocks that tend to grow larger or change significantly over time.
+ * Consider alternative object-oriented approaches such as decorator,
+ * strategy, or state.
+ *
+ * [6 Combinitorial Explosion]
+ * You have lots of code that does almost the same thing..
+ * but with tiny variations in data or behavior.
+ * This can be difficult to refactor-- perhaps using generics or an interpreter or paramters?
+ * List class for example
+ *
+ * [7 Large Class] (cohesiveness)
+ * Large classes, like long methods, are difficult to read, understand, and troubleshoot.
+ * Does the class contain too many responsibilities?
+ * Can the large class be restructured or broken into smaller classes?
+ *
+ * [8 Type Embedded in Name]
+ * Avoid placing types in method names; it's not only redundant,
+ * but it forces you to change the name if the type changes.
+ *
+ * [9 Uncommunicative Name]
+ * Read the method name, do you understand what it does
+ * if no please rename the function name
+ *
+ * Does the name of the method succinctly describe what that method does?
+ * Could you read the method's name to another developer and have them explain to you what it does?
+ * If not, rename it or rewrite it.
+ *
+ *
  */
